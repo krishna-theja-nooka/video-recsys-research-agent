@@ -1,0 +1,86 @@
+{
+  "selected": "baseline",
+  "selection_seed": 42,
+  "audit": [
+    {
+      "proposal": "recency",
+      "passes_baseline_gate": false,
+      "validation": {
+        "recall@10": 0.0414903859579345,
+        "ndcg@10": 0.04897974336446497,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.9109362723453333
+      },
+      "training_sha256": "0d636d3bc0bc51305a11849f3750018e54d6ca5bfe2d26c81dd857682761b715"
+    },
+    {
+      "proposal": "tail",
+      "passes_baseline_gate": false,
+      "validation": {
+        "recall@10": 0.046538730572312746,
+        "ndcg@10": 0.060169885572939626,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.9070091454040393
+      },
+      "training_sha256": "0d636d3bc0bc51305a11849f3750018e54d6ca5bfe2d26c81dd857682761b715"
+    },
+    {
+      "proposal": "ambiguous",
+      "passes_baseline_gate": false,
+      "validation": {
+        "recall@10": 0.035452270018037524,
+        "ndcg@10": 0.04948366023879558,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.9160351156384062
+      },
+      "training_sha256": "0d636d3bc0bc51305a11849f3750018e54d6ca5bfe2d26c81dd857682761b715"
+    }
+  ],
+  "config": {
+    "epochs": 8,
+    "dim": 32,
+    "lr": 0.003,
+    "batch_size": 1024,
+    "threads": 2,
+    "k": 10
+  },
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "manifest": {
+    "raw_rows": 100000,
+    "raw_sha256": "f4009b7210d3161abf51a9c8836cd6c95257ea51370ed424534d23f9a438bc6d",
+    "engine": "python",
+    "cutoffs": [
+      889237269,
+      891382309
+    ],
+    "users": 751,
+    "items": 1616,
+    "positive_label": "rating >= 4",
+    "partitions": {
+      "train": {
+        "raw": 79999,
+        "retained": 79999,
+        "excluded_cold_start": 0,
+        "sha256": "0d636d3bc0bc51305a11849f3750018e54d6ca5bfe2d26c81dd857682761b715"
+      },
+      "valid": {
+        "raw": 10001,
+        "retained": 1520,
+        "excluded_cold_start": 8481,
+        "sha256": "910316419cc64a722f2719ec00201ccb98c390243ade77f7f0724da0f892089c"
+      },
+      "test": {
+        "raw": 10000,
+        "retained": 1344,
+        "excluded_cold_start": 8656,
+        "sha256": "b0754e796758db0e9ec0fb848bcd915b1aa914495918a2c3346fad37aeb15b15"
+      }
+    },
+    "genres_sha256": "b92036a40df8291369c3aff5c69bda76ed79eb2be88a50d4f974611506355eb1"
+  },
+  "gate": "validation recall >= baseline + 0.001 and NE <= baseline * 1.02"
+}

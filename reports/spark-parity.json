@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "rows": 100000,
+  "raw_sha256": "f4009b7210d3161abf51a9c8836cd6c95257ea51370ed424534d23f9a438bc6d",
+  "partitions": {
+    "train": {
+      "raw": 79999,
+      "retained": 79999,
+      "excluded_cold_start": 0,
+      "sha256": "0d636d3bc0bc51305a11849f3750018e54d6ca5bfe2d26c81dd857682761b715"
+    },
+    "valid": {
+      "raw": 10001,
+      "retained": 1520,
+      "excluded_cold_start": 8481,
+      "sha256": "910316419cc64a722f2719ec00201ccb98c390243ade77f7f0724da0f892089c"
+    },
+    "test": {
+      "raw": 10000,
+      "retained": 1344,
+      "excluded_cold_start": 8656,
+      "sha256": "b0754e796758db0e9ec0fb848bcd915b1aa914495918a2c3346fad37aeb15b15"
+    }
+  },
+  "spark_version": "3.5.5",
+  "local_java": "OpenJDK 21.0.13",
+  "note": "Both Python and Spark produced identical canonical splits; recommended Spark runtime is JDK 17."
+}

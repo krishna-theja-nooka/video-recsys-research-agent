@@ -1,0 +1,493 @@
+{
+  "config": {
+    "epochs": 8,
+    "dim": 32,
+    "lr": 0.003,
+    "batch_size": 1024,
+    "threads": 2,
+    "k": 10
+  },
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "selected": "baseline",
+  "manifest": {
+    "raw_rows": 100000,
+    "raw_sha256": "f4009b7210d3161abf51a9c8836cd6c95257ea51370ed424534d23f9a438bc6d",
+    "engine": "python",
+    "cutoffs": [
+      889237269,
+      891382309
+    ],
+    "users": 751,
+    "items": 1616,
+    "positive_label": "rating >= 4",
+    "partitions": {
+      "train": {
+        "raw": 79999,
+        "retained": 79999,
+        "excluded_cold_start": 0,
+        "sha256": "0d636d3bc0bc51305a11849f3750018e54d6ca5bfe2d26c81dd857682761b715"
+      },
+      "valid": {
+        "raw": 10001,
+        "retained": 1520,
+        "excluded_cold_start": 8481,
+        "sha256": "910316419cc64a722f2719ec00201ccb98c390243ade77f7f0724da0f892089c"
+      },
+      "test": {
+        "raw": 10000,
+        "retained": 1344,
+        "excluded_cold_start": 8656,
+        "sha256": "b0754e796758db0e9ec0fb848bcd915b1aa914495918a2c3346fad37aeb15b15"
+      }
+    },
+    "genres_sha256": "b92036a40df8291369c3aff5c69bda76ed79eb2be88a50d4f974611506355eb1"
+  },
+  "runs": [
+    {
+      "variant": "baseline",
+      "seed": 42,
+      "cost": {
+        "train_wall_seconds": 7.797212089000027,
+        "train_cpu_seconds": 15.601324473999998,
+        "optimizer_steps": 632,
+        "training_examples": 639992,
+        "parameters": 88064,
+        "losses": [
+          0.6520140063552705,
+          0.6074312020812053,
+          0.5846553599471296,
+          0.5657107833422763,
+          0.5507924127603173,
+          0.5377354495531231,
+          0.5259112371052964,
+          0.5152428809263601
+        ],
+        "config": {
+          "epochs": 8,
+          "dim": 32,
+          "lr": 0.003,
+          "batch_size": 1024,
+          "threads": 2,
+          "k": 10
+        }
+      },
+      "mlflow_run_id": "689793ade128442ebcf7a42d7d8be1a0",
+      "validation": {
+        "recall@10": 0.04708058162336171,
+        "ndcg@10": 0.05812046429773592,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.9081714710318216
+      },
+      "test": {
+        "recall@10": 0.096185137025218,
+        "ndcg@10": 0.14599853302742535,
+        "evaluated_users": 52,
+        "normalized_entropy": 0.8637506209780644
+      }
+    },
+    {
+      "variant": "recency",
+      "seed": 42,
+      "cost": {
+        "train_wall_seconds": 7.583350924999991,
+        "train_cpu_seconds": 15.155859955999997,
+        "optimizer_steps": 632,
+        "training_examples": 639992,
+        "parameters": 88064,
+        "losses": [
+          0.6440695905928615,
+          0.6002093320806395,
+          0.5784898534292168,
+          0.5599105844242986,
+          0.5448265018849855,
+          0.5317753024467174,
+          0.5203225466584823,
+          0.509581193699506
+        ],
+        "config": {
+          "epochs": 8,
+          "dim": 32,
+          "lr": 0.003,
+          "batch_size": 1024,
+          "threads": 2,
+          "k": 10
+        }
+      },
+      "mlflow_run_id": "776336b4ae704b4fa150cceba814d4b5",
+      "validation": {
+        "recall@10": 0.0414903859579345,
+        "ndcg@10": 0.04897974336446497,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.9109362723453333
+      }
+    },
+    {
+      "variant": "tail",
+      "seed": 42,
+      "cost": {
+        "train_wall_seconds": 7.64644170300005,
+        "train_cpu_seconds": 15.288193695000004,
+        "optimizer_steps": 632,
+        "training_examples": 639992,
+        "parameters": 88064,
+        "losses": [
+          0.6626603512867154,
+          0.6168709199984885,
+          0.5932058519607117,
+          0.5744227379369361,
+          0.5595808895650907,
+          0.5463900003366589,
+          0.534750927153834,
+          0.5238912735958082
+        ],
+        "config": {
+          "epochs": 8,
+          "dim": 32,
+          "lr": 0.003,
+          "batch_size": 1024,
+          "threads": 2,
+          "k": 10
+        }
+      },
+      "mlflow_run_id": "475c80ef41cd4358bd46b7aa200fff17",
+      "validation": {
+        "recall@10": 0.046538730572312746,
+        "ndcg@10": 0.060169885572939626,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.9070091454040393
+      }
+    },
+    {
+      "variant": "ambiguous",
+      "seed": 42,
+      "cost": {
+        "train_wall_seconds": 7.6857714860000215,
+        "train_cpu_seconds": 15.366002447999996,
+        "optimizer_steps": 632,
+        "training_examples": 639992,
+        "parameters": 88064,
+        "losses": [
+          0.6103958166818783,
+          0.5641942027635914,
+          0.5411513742890173,
+          0.5228486713641098,
+          0.5089884083021191,
+          0.4966030059210186,
+          0.48546806287434097,
+          0.47540217269170143
+        ],
+        "config": {
+          "epochs": 8,
+          "dim": 32,
+          "lr": 0.003,
+          "batch_size": 1024,
+          "threads": 2,
+          "k": 10
+        }
+      },
+      "mlflow_run_id": "16077894113a40ff8bcdaa391f7009c8",
+      "validation": {
+        "recall@10": 0.035452270018037524,
+        "ndcg@10": 0.04948366023879558,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.9160351156384062
+      }
+    },
+    {
+      "variant": "no_content",
+      "seed": 42,
+      "cost": {
+        "train_wall_seconds": 1.1947206820000247,
+        "train_cpu_seconds": 2.388554197000005,
+        "optimizer_steps": 632,
+        "training_examples": 639992,
+        "parameters": 78112,
+        "losses": [
+          0.674934150367995,
+          0.6453207585109434,
+          0.6214962501994019,
+          0.5979412875034926,
+          0.5725434492767736,
+          0.5469979707204597,
+          0.5237973272561279,
+          0.5033290914489972
+        ],
+        "config": {
+          "epochs": 8,
+          "dim": 32,
+          "lr": 0.003,
+          "batch_size": 1024,
+          "threads": 2,
+          "k": 10
+        }
+      },
+      "mlflow_run_id": "faf952eef7914fa1944e6af3064c2fa5",
+      "validation": {
+        "recall@10": 0.0667209871346344,
+        "ndcg@10": 0.07765697146094057,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.8685779835731452
+      },
+      "test": {
+        "recall@10": 0.063793676576482,
+        "ndcg@10": 0.10459361890504212,
+        "evaluated_users": 52,
+        "normalized_entropy": 0.813641506126486
+      }
+    },
+    {
+      "variant": "baseline",
+      "seed": 43,
+      "cost": {
+        "train_wall_seconds": 7.519176700999992,
+        "train_cpu_seconds": 15.034443822,
+        "optimizer_steps": 632,
+        "training_examples": 639992,
+        "parameters": 88064,
+        "losses": [
+          0.6514904978102474,
+          0.6073096048902125,
+          0.5862594983974372,
+          0.5685982146151839,
+          0.5536012175144286,
+          0.5390512160291421,
+          0.5263439670677675,
+          0.5148177727475569
+        ],
+        "config": {
+          "epochs": 8,
+          "dim": 32,
+          "lr": 0.003,
+          "batch_size": 1024,
+          "threads": 2,
+          "k": 10
+        }
+      },
+      "mlflow_run_id": "35afb4c0da2145b499f9265a4ff9b848",
+      "validation": {
+        "recall@10": 0.044273882905188675,
+        "ndcg@10": 0.05819954414032594,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.9116587525704646
+      },
+      "test": {
+        "recall@10": 0.08724365710850587,
+        "ndcg@10": 0.1158625218211077,
+        "evaluated_users": 52,
+        "normalized_entropy": 0.865878650376133
+      }
+    },
+    {
+      "variant": "no_content",
+      "seed": 43,
+      "cost": {
+        "train_wall_seconds": 1.1909692110000378,
+        "train_cpu_seconds": 2.3824698809999916,
+        "optimizer_steps": 632,
+        "training_examples": 639992,
+        "parameters": 78112,
+        "losses": [
+          0.6751764195186111,
+          0.6455218675679005,
+          0.6216216754735407,
+          0.5980142363458978,
+          0.5722191074360645,
+          0.5459783722274618,
+          0.5221804737915097,
+          0.5013996482608476
+        ],
+        "config": {
+          "epochs": 8,
+          "dim": 32,
+          "lr": 0.003,
+          "batch_size": 1024,
+          "threads": 2,
+          "k": 10
+        }
+      },
+      "mlflow_run_id": "02d5bd83d5664dce829ce57d65b1efb9",
+      "validation": {
+        "recall@10": 0.05581619129777884,
+        "ndcg@10": 0.07252630239289037,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.8588467079027287
+      },
+      "test": {
+        "recall@10": 0.08147732181906985,
+        "ndcg@10": 0.11813404850345134,
+        "evaluated_users": 52,
+        "normalized_entropy": 0.8019661758539917
+      }
+    },
+    {
+      "variant": "baseline",
+      "seed": 44,
+      "cost": {
+        "train_wall_seconds": 8.091794686000071,
+        "train_cpu_seconds": 16.178425714,
+        "optimizer_steps": 632,
+        "training_examples": 639992,
+        "parameters": 88064,
+        "losses": [
+          0.6514816496479184,
+          0.6061849912960342,
+          0.5841592620753633,
+          0.5662424198242916,
+          0.5515206267518427,
+          0.5386937499049306,
+          0.5267018535075813,
+          0.5159315525767199
+        ],
+        "config": {
+          "epochs": 8,
+          "dim": 32,
+          "lr": 0.003,
+          "batch_size": 1024,
+          "threads": 2,
+          "k": 10
+        }
+      },
+      "mlflow_run_id": "da98c1316c554e0aadc8bab5e6b7111c",
+      "validation": {
+        "recall@10": 0.05332908060588496,
+        "ndcg@10": 0.055810798585109844,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.9128857667094255
+      },
+      "test": {
+        "recall@10": 0.07748240938583877,
+        "ndcg@10": 0.11770519624661299,
+        "evaluated_users": 52,
+        "normalized_entropy": 0.8629228773767847
+      }
+    },
+    {
+      "variant": "no_content",
+      "seed": 44,
+      "cost": {
+        "train_wall_seconds": 1.3067224019999912,
+        "train_cpu_seconds": 2.6141628100000105,
+        "optimizer_steps": 632,
+        "training_examples": 639992,
+        "parameters": 78112,
+        "losses": [
+          0.6750381553932587,
+          0.6453763006408492,
+          0.6219066214857403,
+          0.5992756409614324,
+          0.5748286665660902,
+          0.5490185463374405,
+          0.5243958094744123,
+          0.5025134730388076
+        ],
+        "config": {
+          "epochs": 8,
+          "dim": 32,
+          "lr": 0.003,
+          "batch_size": 1024,
+          "threads": 2,
+          "k": 10
+        }
+      },
+      "mlflow_run_id": "c454cdcb7e71401b9d1f1a877ab745bc",
+      "validation": {
+        "recall@10": 0.05022216161719632,
+        "ndcg@10": 0.075979392516179,
+        "evaluated_users": 69,
+        "normalized_entropy": 0.8687325406769373
+      },
+      "test": {
+        "recall@10": 0.07272546480095897,
+        "ndcg@10": 0.11889411467206522,
+        "evaluated_users": 52,
+        "normalized_entropy": 0.829189137747638
+      }
+    }
+  ],
+  "paired_bootstrap": [
+    {
+      "comparison": "selected_minus_baseline",
+      "seed": 42,
+      "mean_delta": 0.0,
+      "lower": 0.0,
+      "upper": 0.0,
+      "samples": 2000
+    },
+    {
+      "comparison": "no_content_minus_baseline",
+      "seed": 42,
+      "mean_delta": -0.03239146044873599,
+      "lower": -0.09213597258005153,
+      "upper": 0.01744172719695161,
+      "samples": 2000
+    },
+    {
+      "comparison": "selected_minus_baseline",
+      "seed": 43,
+      "mean_delta": 0.0,
+      "lower": 0.0,
+      "upper": 0.0,
+      "samples": 2000
+    },
+    {
+      "comparison": "no_content_minus_baseline",
+      "seed": 43,
+      "mean_delta": -0.005766335289436025,
+      "lower": -0.06887077044042988,
+      "upper": 0.05647186059620568,
+      "samples": 2000
+    },
+    {
+      "comparison": "selected_minus_baseline",
+      "seed": 44,
+      "mean_delta": 0.0,
+      "lower": 0.0,
+      "upper": 0.0,
+      "samples": 2000
+    },
+    {
+      "comparison": "no_content_minus_baseline",
+      "seed": 44,
+      "mean_delta": -0.0047569445848798094,
+      "lower": -0.06902510150106303,
+      "upper": 0.056062404335430624,
+      "samples": 2000
+    }
+  ],
+  "popularity": {
+    "validation": {
+      "recall@10": 0.09959866227194968,
+      "ndcg@10": 0.1252985526972879,
+      "evaluated_users": 69,
+      "normalized_entropy": 0.9051233323888849
+    },
+    "test": {
+      "recall@10": 0.08936419791563874,
+      "ndcg@10": 0.13818006367095145,
+      "evaluated_users": 52,
+      "normalized_entropy": 0.89414698530238
+    }
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "processor": "",
+    "logical_cpus": 9,
+    "device": "cpu",
+    "created_at": "2026-11-08T20:48:01.698401+00:00",
+    "source_sha256": "a081a49bfbbc5bcc2e18d254dabc962591a1c7d162ca6fba39d749c5f54f9c7b",
+    "packages": {
+      "torch": "2.6.0+cpu",
+      "numpy": "2.2.6",
+      "transformers": "4.51.3",
+      "mlflow": "2.22.0",
+      "optuna": "4.3.0",
+      "langgraph": "0.4.8"
+    }
+  },
+  "total_wall_seconds": 50.66874653700006
+}

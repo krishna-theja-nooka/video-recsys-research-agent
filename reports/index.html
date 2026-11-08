@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>FrameLab · Research</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f3f1e9;color:#182c30;font:16px/1.6 system-ui}
+main{max-width:1100px;margin:auto;padding:55px 24px}header{border-bottom:1px solid #bccac5;padding-bottom:30px}
+small{letter-spacing:.16em;text-transform:uppercase;color:#35716a}h1{font-size:clamp(32px,6vw,60px);line-height:1.1;margin:18px 0}
+h2{font-size:23px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+.card,section{background:#fff;border:1px solid #d3ddd8;border-radius:14px;padding:24px;margin-bottom:20px}
+.card b{display:block;font-size:30px}.badge{background:#dceae2;padding:8px 16px;border-radius:30px;display:inline-block}
+table{border-collapse:collapse;width:100%;text-align:left}th,td{padding:12px;border-bottom:1px solid #dde5df}
+.scroll{overflow:auto}.barrow{display:grid;grid-template-columns:130px 1fr 55px;gap:16px;align-items:center;margin:20px 0}
+.track{background:#eef1ed;height:20px;border-radius:4px}.bar{height:100%;background:#23776a;border-radius:4px}
+footer{color:#506563}a{color:#16685d}@media(max-width:650px){.cards{grid-template-columns:1fr}.barrow{grid-template-columns:90px 1fr 45px}}</style>
+<main><header><small>Project 09 / Recommendation research</small><h1>FrameLab</h1>
+<p>Deep learning recommendations. Bounded experiments. Measured evidence.</p>
+<span class="badge">MovieLens proxy · CPU benchmark · No paid services</span></header><div class="cards"><div class="card"><small>Selected intervention</small><b>baseline</b>Validation gate decision</div>
+<div class="card"><small>Replication</small><b>3 seeds</b>Paired initialization and shuffling</div>
+<div class="card"><small>Experiment wall time</small><b>0.8 min</b>Measured on this machine</div></div>
+<section><h2>Held-out results</h2><div class="scroll"><table><tr><th>Model</th><th>Recall@10 ± seed SD</th><th>NE ↓</th><th>Train wall mean</th></tr><tr><td>baseline</td><td>0.0870 ± 0.0094</td><td>0.8642</td><td>7.8s</td></tr><tr><td>no_content</td><td>0.0727 ± 0.0088</td><td>0.8149</td><td>1.2s</td></tr></table></div>
+<p>Popularity Recall@10: 0.0894 · NE: 0.8941.</p></section>
+<section><h2>Recall@10</h2><p>Full catalog ranking · axis 0–1 · higher is better</p><div class="barrow"><span>baseline</span><div class="track"><div class="bar" style="width:8.70%"></div></div><strong>0.087</strong></div><div class="barrow"><span>no_content</span><div class="track"><div class="bar" style="width:7.27%"></div></div><strong>0.073</strong></div></section>
+<section><h2>What this demonstrates</h2><p>A fixed temporal split, an auditable three-trial LangGraph controller, train-only reweighting, and honest held-out evaluation.</p>
+<p>Movie ratings are a proxy for discovery. These are not short-video watch-time, CTR, or online engagement results. Selection on validation does not guarantee improvement on test.</p>
+<a href="research-report.md">Read the full research report</a> · <a href="results.json">Inspect measured results</a></section>
+<footer>Generated from local experiment outputs. No raw user interactions or model weights are embedded.</footer></main></html>

@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "repeated_reference_runs": 2,
+  "validation_metrics_exactly_equal": true,
+  "test_metrics_exactly_equal": true,
+  "selected_policy_equal": true,
+  "note": "Same fixed model and selection protocol; second run adds ablation bootstrap reporting. Timings differ."
+}

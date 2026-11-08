@@ -1,0 +1,74 @@
+{
+  "best_params": {
+    "dim": 32,
+    "lr": 0.00539503096667023
+  },
+  "best_validation_recall": 0.03860028079559598,
+  "trials": [
+    {
+      "number": 0,
+      "params": {
+        "dim": 32,
+        "lr": 0.00539503096667023
+      },
+      "value": 0.03860028079559598,
+      "attributes": {
+        "cost": {
+          "train_wall_seconds": 4.095852842999989,
+          "train_cpu_seconds": 8.199078842,
+          "optimizer_steps": 316,
+          "training_examples": 319996,
+          "parameters": 88064,
+          "losses": [
+            0.637321776930327,
+            0.5895832522292231,
+            0.5614728972115179,
+            0.5406808215364292
+          ],
+          "config": {
+            "epochs": 4,
+            "dim": 32,
+            "lr": 0.00539503096667023,
+            "batch_size": 1024,
+            "threads": 2,
+            "k": 10
+          }
+        },
+        "normalized_entropy": 0.9095607377206463
+      }
+    },
+    {
+      "number": 1,
+      "params": {
+        "dim": 16,
+        "lr": 0.0014321698289111518
+      },
+      "value": 0.03402864755759123,
+      "attributes": {
+        "cost": {
+          "train_wall_seconds": 3.058694146999983,
+          "train_cpu_seconds": 6.110757772000001,
+          "optimizer_steps": 316,
+          "training_examples": 319996,
+          "parameters": 43168,
+          "losses": [
+            0.6742421557130536,
+            0.6368806337810748,
+            0.6149779513194594,
+            0.6021487305770196
+          ],
+          "config": {
+            "epochs": 4,
+            "dim": 16,
+            "lr": 0.0014321698289111518,
+            "batch_size": 1024,
+            "threads": 2,
+            "k": 10
+          }
+        },
+        "normalized_entropy": 0.9516181307000089
+      }
+    }
+  ],
+  "note": "Exploratory validation-only tuning; not applied to the fixed benchmark."
+}
