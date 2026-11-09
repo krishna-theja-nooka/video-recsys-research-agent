@@ -1,6 +1,6 @@
 {
   ".dockerignore": "8c1c5a17694da0ed163729476be16cff2230b7e9b099ad3a32e04360fc6d96ac",
-  ".github/workflows/ci.yml": "f8c7442da529f9c601b91059f0db57cf469f5ecea60a05640d75be83eb189e86",
+  ".github/workflows/ci.yml": "9c7780383cd7d6ec04148d0d8f4ef80430da581cf7b21cdb82acf8543a7b33a7",
   ".github/workflows/release.yml": "c5092b4ba0e2dfdeb54e8259231d8ca4ac41fe5674552dd2cb3145f5a30946cc",
   ".gitignore": "a03ff8a6dfdfb1889aa5c3110230ef68b503c756981e08b0f4c31af98a7a6547",
   "CONTRIBUTING.md": "4fa839f0fec32e1729e483f668ec50193ad1277b8c464960633a621925b7608e",
